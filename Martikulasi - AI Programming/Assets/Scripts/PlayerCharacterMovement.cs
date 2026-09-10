@@ -7,6 +7,8 @@ public class PlayerCharacterMovement : MonoBehaviour
     [SerializeField] private float sprintSpeed = 2;
     [SerializeField] private float acceleration = .5f;
 
+    public bool Enabled { get; private set; } = true;
+
     private CharacterController characterController;
     private Vector3 moveDirection;
     private float currentSpeed;
@@ -32,11 +34,15 @@ public class PlayerCharacterMovement : MonoBehaviour
 
     public void Move()
     {
-        CalculateVelocityXZ();
-        CalculateVelocityY();
-        Vector3 velocity = new Vector3(velocityXZ.x, velocityY, velocityXZ.z);
+        if (Enabled)
+        {
+            CalculateVelocityXZ();
+            CalculateVelocityY();
+            Vector3 velocity = new Vector3(velocityXZ.x, velocityY, velocityXZ.z);
 
-        characterController.Move(velocity);
+            characterController.Move(velocity);
+        }
+        
     }
 
     private void CalculateVelocityXZ()
@@ -85,6 +91,8 @@ public class PlayerCharacterMovement : MonoBehaviour
     }
 
     public void SetSprint(bool isSprint) => this.isSprint = isSprint;
+
+    public void SetEnabled(bool isEnabled) => Enabled = isEnabled;
 
     private void CheckIsGrounded()
     {

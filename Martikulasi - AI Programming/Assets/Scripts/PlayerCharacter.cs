@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
+    [SerializeField] private InputManager input;
+
     private PlayerCharacterMovement movement;
     private PlayerCharacterStamina stamina;
     private InventoryManager inventory;
     private InteractDetector interactDetector;
-    private CameraManager camera;
+    private CameraManager cameraManager;
+    private Flashlight flashlight;
 
+    public InputManager  Input => input;
     public PlayerCharacterMovement Movement => movement;
     public PlayerCharacterStamina Stamina => stamina;
     public InventoryManager Inventory => inventory;
     public InteractDetector InteractDetector => interactDetector;
-    public CameraManager Camera => camera;
+    public CameraManager Camera => cameraManager;
+    public Flashlight Flashlight => flashlight;
+
+    public bool IsHiding { get; private set; }
 
     private void Awake()
     {
@@ -23,6 +30,9 @@ public class PlayerCharacter : MonoBehaviour
         stamina = GetComponent<PlayerCharacterStamina>();
         inventory = GetComponent<InventoryManager>();
         interactDetector = GetComponent<InteractDetector>();
-        camera = GetComponent<CameraManager>();
+        cameraManager = GetComponent<CameraManager>();
+        flashlight = GetComponent<Flashlight>();
     }
+
+    public void SetIsHiding(bool isHiding) => IsHiding = isHiding;
 }
