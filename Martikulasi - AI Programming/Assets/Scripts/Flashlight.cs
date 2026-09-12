@@ -1,12 +1,11 @@
+using System;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class Flashlight : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
     [SerializeField] private float initBatteryLevel = 100;
     [SerializeField] private float batteryDrainRate = 1;
-
 
     private PlayerCharacter player;
     private float batteryLevel;
