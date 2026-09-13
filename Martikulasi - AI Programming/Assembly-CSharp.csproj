@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ghost\GhostSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Interface\IInteractable.cs" />
     <Compile Include="Assets\Scripts\GameEvent\TriggerBox.cs" />
     <Compile Include="Assets\Scripts\Interactable\Door_Rotating.cs" />
@@ -59,37 +60,38 @@
     <Compile Include="Assets\Scripts\Interactable\Door.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\SetTargetIsHidingAction.cs" />
     <Compile Include="Assets\Scripts\UI\HUDManager.cs" />
-    <Compile Include="Assets\Scripts\Flashlight.cs" />
     <Compile Include="Assets\Scripts\Interactable\Item.cs" />
     <Compile Include="Assets\Scripts\Interactable\HidingCloset.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\WaitUntilReachDestinationAction.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\SetCanSeeTargetAction.cs" />
     <Compile Include="Assets\Scripts\GameEvent\GameEventBase.cs" />
-    <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\DisplayCursor.cs" />
     <Compile Include="Assets\Scripts\Interactable\InteractDetector.cs" />
     <Compile Include="Assets\Scripts\UI\CrosshairUI.cs" />
     <Compile Include="Assets\Scripts\GameEvent\GameEventManager.cs" />
+    <Compile Include="Assets\Scripts\Ghost\HighlightGhost.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\DespawnAiAction.cs" />
-    <Compile Include="Assets\Scripts\PlayerCharacterStamina.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\ValidateNavMeshAction.cs" />
     <Compile Include="Assets\Scripts\Interactable\Item_Battery.cs" />
-    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\ItemData.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\InputSetting\PlayerInputSystem.cs" />
     <Compile Include="Assets\Scripts\UI\InteractionInfoUI.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCharacterStamina.cs" />
     <Compile Include="Assets\Scripts\Ghost\SightPerception.cs" />
-    <Compile Include="Assets\Scripts\PlayerCharacterMovement.cs" />
     <Compile Include="Assets\Scripts\UI\BatteryLevelUI.cs" />
+    <Compile Include="Assets\Scripts\Ghost\MovingGhost.cs" />
     <Compile Include="Assets\Scripts\Interactable\Door_Sliding.cs" />
     <Compile Include="Assets\Scripts\Interface\IPickable.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\GameEvent\ShowGhostGameEvent.cs" />
-    <Compile Include="Assets\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Ghost\GhostAIController.cs" />
     <Compile Include="Assets\Scripts\Ghost\AI Action\SetLastSeenPositionAction.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
