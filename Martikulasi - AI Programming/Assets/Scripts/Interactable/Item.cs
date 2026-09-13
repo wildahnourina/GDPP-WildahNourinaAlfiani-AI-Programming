@@ -5,7 +5,7 @@ public class Item : MonoBehaviour, IInteractable, IPickable
 {
     [SerializeField] private ItemData itemData;
 
-    //public UnityEvent OnItemPicked;
+    public UnityEvent OnItemPicked;
     public string Name => itemData.itemName;
 
     [ContextMenu("Interact Item")]
@@ -19,7 +19,7 @@ public class Item : MonoBehaviour, IInteractable, IPickable
         ItemData newItem = new ItemData(itemData.itemId, itemData.itemName);
 
         player.Inventory.AddItems(newItem);
-        //OnItemPicked?.Invoke();
+        OnItemPicked?.Invoke();
         Destroy(gameObject);
     }
 }

@@ -42,7 +42,18 @@ public class InteractDetector : MonoBehaviour
                 IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
 
                 if (interactable != null)
+                {
                     detectedInteractable = interactable;
+
+                    HUDManager.Instance.InteractionInfoUI.SetNameText(detectedInteractable.Name);
+                    HUDManager.Instance.InteractionInfoUI.SetVisible(true);
+                    HUDManager.Instance.CrosshairUI.SetHighlight(true);
+                }
+            }
+            else
+            {
+                HUDManager.Instance.InteractionInfoUI.SetVisible(false);
+                HUDManager.Instance.CrosshairUI.SetHighlight(false);
             }
         }
     }
@@ -54,6 +65,9 @@ public class InteractDetector : MonoBehaviour
             detectedInteractable.Interact(player);
             detectedInteractable = null;
             isInteracting = true;
+
+            HUDManager.Instance.InteractionInfoUI.SetVisible(false);
+            HUDManager.Instance.CrosshairUI.SetHighlight(false);
         }
     }
 

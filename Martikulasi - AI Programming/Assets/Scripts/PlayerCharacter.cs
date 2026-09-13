@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerCharacter : MonoBehaviour
     private InteractDetector interactDetector;
     private CameraManager cameraManager;
     private Flashlight flashlight;
+
+    public UnityEvent OnDeath;
 
     public InputManager  Input => input;
     public PlayerCharacterMovement Movement => movement;

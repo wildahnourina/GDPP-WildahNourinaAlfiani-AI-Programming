@@ -90,7 +90,12 @@ public class PlayerCharacterMovement : MonoBehaviour
         moveDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
     }
 
-    public void SetSprint(bool isSprint) => this.isSprint = isSprint;
+    public void SetSprint(bool isSprint)
+    {
+        this.isSprint = isSprint;
+        if (isSprint)
+            HUDManager.Instance.StaminaUI.SetVisible(true);
+    }
 
     public void SetEnabled(bool isEnabled) => Enabled = isEnabled;
 

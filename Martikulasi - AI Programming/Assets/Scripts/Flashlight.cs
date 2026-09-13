@@ -15,8 +15,12 @@ public class Flashlight : MonoBehaviour
 
     private void Awake()
     {
-        batteryLevel = initBatteryLevel;
         player = GetComponent<PlayerCharacter>();
+    }
+    private void Start()
+    {
+        batteryLevel = initBatteryLevel;
+        HUDManager.Instance.BatteryLevelUI.UpdateBatteryUI(batteryLevel, initBatteryLevel);
     }
 
     private void Update()
@@ -47,10 +51,15 @@ public class Flashlight : MonoBehaviour
                 batteryLevel = 0;
                 flashlight.enabled = false;
             }
+            HUDManager.Instance.BatteryLevelUI.UpdateBatteryUI(batteryLevel, initBatteryLevel);
         }
     }
 
-    public void RefillBatteryLevel() => batteryLevel = initBatteryLevel;
+    public void RefillBatteryLevel()
+    {
+        batteryLevel = initBatteryLevel;
+        HUDManager.Instance.BatteryLevelUI.UpdateBatteryUI(batteryLevel, initBatteryLevel);
+    }
 
     private void UpdateFlashlightRotation()
     {

@@ -19,6 +19,7 @@ public class Door : MonoBehaviour, IInteractable
 
     public UnityEvent OnDoorOpen;
     public UnityEvent OnDoorClose;
+    public UnityEvent OnOpenLockedDoor;
 
     public virtual void Open()
     {
@@ -42,6 +43,10 @@ public class Door : MonoBehaviour, IInteractable
             {
                 isLocked = false;
                 Open();
+            }
+            else
+            {
+                OnOpenLockedDoor?.Invoke();
             }
         }
         else

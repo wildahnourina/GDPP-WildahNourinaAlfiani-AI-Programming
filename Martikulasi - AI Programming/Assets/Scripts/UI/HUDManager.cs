@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class HUDManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private StaminaUI staminaUI;
+    [SerializeField] private BatteryLevelUI batteryLevelUI;
+    [SerializeField] private InteractionInfoUI interactionInfoUI;
+    [SerializeField] private CrosshairUI crosshairUI;
 
-    // Update is called once per frame
-    void Update()
+    public static HUDManager Instance => instance;
+    public BatteryLevelUI BatteryLevelUI => batteryLevelUI;
+    public InteractionInfoUI InteractionInfoUI => interactionInfoUI;
+    public CrosshairUI CrosshairUI => crosshairUI;
+
+    private static HUDManager instance;
+
+    public StaminaUI StaminaUI => staminaUI;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
     }
 }
