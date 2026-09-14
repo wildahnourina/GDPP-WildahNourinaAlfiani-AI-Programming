@@ -5,16 +5,11 @@ using UnityEngine.Events;
 
 public class MovingGhost : MonoBehaviour
 {
-    [SerializeField]
-    private List<Vector3> _destinations = new List<Vector3>();
-    [SerializeField]
-    private float _speed = 1;
-    [SerializeField]
-    private float _distanceTolerance = 0.1f;
-    [SerializeField]
-    private bool _autoNextDestination;
-    [SerializeField]
-    private bool _playOnAwake = true;
+    [SerializeField] private List<Vector3> _destinations = new List<Vector3>();
+    [SerializeField] private float _speed = 1;
+    [SerializeField] private float _distanceTolerance = 0.1f;
+    [SerializeField] private bool _autoNextDestination;
+    [SerializeField] private bool _playOnAwake = true;
 
     public UnityEvent OnStartMoving;
     public UnityEvent OnReachDestination;
